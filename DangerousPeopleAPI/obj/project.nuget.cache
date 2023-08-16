@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ffhLoUmlV6NNuwnKge54iz4ugkDrQylkivyAOWC7NZoK+rNrrd9pTfCebDPPqyvOQ2ATh4r/i2QqmMVODsfcA==",
+  "dgSpecHash": "b1jlDfbSRXz6BGqRIT3MAHGYTQFrj4sARE4XPuGBdOvApbmyUjP5TShxXT+ZbNeBAHLwTZSx4MeaXA5CPu/tnw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\erick\\source\\repos\\DangerousPeopleAPI\\backend.csproj",
+  "projectFilePath": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erick\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\erick\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.9\\microsoft.aspnetcore.openapi.7.0.9.nupkg.sha512",

@@ -5,7 +5,7 @@ import { DataGrid } from "@mui/x-data-grid";
 
 const baseURL = "https://localhost:7000/";
 
-export function Tabela() {
+export function Pessoas() {
   const [pessoa, setPessoa] = useState(null);
 
   useEffect(() => {

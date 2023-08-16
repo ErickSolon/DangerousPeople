@@ -1488,11 +1488,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erick\\source\\repos\\DangerousPeopleAPI\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\erick\\source\\repos\\DangerousPeopleAPI\\backend.csproj",
+      "projectPath": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
       "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erick\\source\\repos\\DangerousPeopleAPI\\obj\\",
+      "outputPath": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
