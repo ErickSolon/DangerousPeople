@@ -6,7 +6,8 @@
   Update: <i>Em Desenvolvimento</i><br>
   Delete: <i>Desenvolvido</i><br>
 
-- Principais tecnologias utilizadas<br>
+- Principais tecnologias utilizadas
+  
   Dotnet 7 WebAPI<br>
   React<br>
   MySQL<br>
