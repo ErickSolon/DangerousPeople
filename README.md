@@ -7,6 +7,6 @@
   Delete: <i>Desenvolvido</i><br>
 
 - Principais tecnologias utilizadas
-  Dotnet 7 WebAPI
-  React
-  MySQL
+  Dotnet 7 WebAPI<br>
+  React<br>
+  MySQL<br>
