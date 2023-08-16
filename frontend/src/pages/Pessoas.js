@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
+import { Button } from "@mui/material";
 
 const baseURL = "https://localhost:7000/";
 
@@ -59,7 +60,7 @@ export function Pessoas() {
       headerName: "Ações",
       width: 150,
       renderCell: (params) => (
-        <button onClick={() => handleDelete(params.row.id)}>Excluir</button>
+        <Button onClick={() => handleDelete(params.row.id)} className="btn btn-alert">Excluir</Button>
       ),
     },
   ];
