@@ -60,7 +60,9 @@ export function Pessoas() {
       headerName: "Ações",
       width: 150,
       renderCell: (params) => (
-        <Button onClick={() => handleDelete(params.row.id)} className="btn btn-alert">Excluir</Button>
+        <Button onClick={() => handleDelete(params.row.id)} variant="contained" color="error">
+          Excluir
+        </Button>
       ),
     },
   ];
