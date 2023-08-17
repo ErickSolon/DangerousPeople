@@ -3,11 +3,13 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const baseURL = "https://localhost:7000/";
 
-export function Pessoas() {
+export function Pessoas(props) {
   const [pessoa, setPessoa] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(baseURL + "people").then((res) => {
@@ -58,14 +60,31 @@ export function Pessoas() {
     {
       field: "actions",
       headerName: "Ações",
-      width: 150,
+      width: 200,
       renderCell: (params) => (
-        <Button onClick={() => handleDelete(params.row.id)} variant="contained" color="error">
-          Excluir
-        </Button>
+        <div>
+          <Button
+            onClick={() => handleUpdate(params.row.id)}
+            variant="contained"
+            color="primary"
+          >
+            Atualizar
+          </Button>
+          <Button
+            onClick={() => handleDelete(params.row.id)}
+            variant="contained"
+            color="error"
+          >
+            Excluir
+          </Button>
+        </div>
       ),
     },
   ];
+
+  const handleUpdate = (id) => {
+    navigate(`/update-pessoa/${id}`);
+  };
 
   const handleDelete = (id) => {
     axios.delete(baseURL + "data/" + id).then(() => {
