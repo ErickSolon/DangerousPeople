@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Box, Button, TextField } from "@mui/material";
-import axios from "axios";
-
-const baseURL = "https://localhost:7000/";
+import PessoasService from "../services/PessoasService";
 
 class CriarPessoa extends Component {
   constructor(props) {
@@ -58,8 +56,14 @@ class CriarPessoa extends Component {
         isCriminal: this.state.criminoso === "true",
       };
 
-      await axios.post(baseURL + "data", pessoaData);
-      await axios.post(baseURL + "moreinfo", pessoaMoreInfo);
+      if(this.state.casado === "" || this.state.cpf === "" || this.state.criminoso === "" || this.state.endereco === "" || this.state.identidade === "" || this.state.nomecompleto === "") {
+        alert("Digite todos os campos!")
+      } else {
+        await PessoasService.savePessoa("/data", pessoaData);
+        await PessoasService.savePessoa("/moreinfo", pessoaMoreInfo);
+
+        alert("Pessoa salva com sucesso!");
+      }
 
       this.setState({
         nomecompleto: "",
@@ -69,8 +73,6 @@ class CriarPessoa extends Component {
         identidade: "",
         criminoso: "false",
       });
-
-      alert("Pessoa salva com sucesso!");
     } catch (error) {
       console.error("Erro ao salvar pessoa:", error);
       alert("Ocorreu um erro ao salvar a pessoa.");

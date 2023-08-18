@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-const baseURL = "https://localhost:7000/";
+import PessoasService from "../services/PessoasService";
 
 export function Pessoas(props) {
   const [pessoa, setPessoa] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(baseURL + "people").then((res) => {
+    PessoasService.getPessoas("/people").then((res) => {
       setPessoa(res.data);
     });
   }, []);
@@ -87,12 +85,12 @@ export function Pessoas(props) {
   };
 
   const handleDelete = (id) => {
-    axios.delete(baseURL + "data/" + id).then(() => {
+    PessoasService.deletePessoaByid("/data/", id).then(() => {
       const updatedPessoa = pessoa.filter((item) => item.id !== id);
       setPessoa(updatedPessoa);
     });
 
-    axios.delete(baseURL + "moreinfo/" + id).then(() => {
+    PessoasService.deletePessoaByid("/moreinfo/", id).then(() => {
       const updatedPessoa = pessoa.filter((item) => item.id !== id);
       setPessoa(updatedPessoa);
     });

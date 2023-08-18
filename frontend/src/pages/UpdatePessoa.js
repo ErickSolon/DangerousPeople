@@ -1,10 +1,8 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
-
-const baseURL = "https://localhost:7000/";
+import PessoasService from "../services/PessoasService";
 
 function UpdatePessoa() {
   const { idParam } = useParams();
@@ -39,7 +37,7 @@ function UpdatePessoa() {
   };
 
   useEffect(() => {
-    axios.get(baseURL + "people/" + idParam).then((res) => {
+    PessoasService.getPessoasById("/people/", idParam).then((res) => {
       let pessoas = res.data;
       setState((prevState) => ({
         ...prevState,
@@ -66,11 +64,15 @@ function UpdatePessoa() {
         identity: state.identidade,
         isCriminal: state.criminoso,
       };
+      
+      if(this.state.casado === "" || this.state.cpf === "" || this.state.criminoso === "" || this.state.endereco === "" || this.state.identidade === "" || this.state.nomecompleto === "") { 
+        alert("Digite todos os campos!");
+      } else {
+        await PessoasService.updatePessoaById("/data/", state.id, pessoasData);
+        await PessoasService.updatePessoaById("/moreinfo/", state.id, pessoasMoreInfo);
 
-      await axios.put(baseURL + "data/" + state.id, pessoasData);
-      await axios.put(baseURL + "moreinfo/" + state.id, pessoasMoreInfo);
-
-      alert("Informações atualizadas com sucesso!");
+        alert("Informações atualizadas com sucesso!");
+      }
     } catch (error) {
       console.error("Erro ao atualizar informações:", error);
       alert("Ocorreu um erro ao atualizar as informações.");
@@ -97,6 +99,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.nomecompleto}
                   onChange={changeNomeCompletoHandler}
+                  required
                 />
                 <TextField
                   id="outlined-basic"
@@ -104,6 +107,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.casado}
                   onChange={changeCasadoHandler}
+                  required
                 />
                 <TextField
                   id="outlined-basic"
@@ -111,6 +115,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.cpf}
                   onChange={changeCPFHandler}
+                  required
                 />
                 <TextField
                   id="outlined-basic"
@@ -118,6 +123,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.endereco}
                   onChange={changeEnderecoHandler}
+                  required
                 />
                 <TextField
                   id="outlined-basic"
@@ -125,6 +131,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.identidade}
                   onChange={changeIdentidadeHandler}
+                  required
                 />
                 <TextField
                   id="outlined-basic"
@@ -132,6 +139,7 @@ function UpdatePessoa() {
                   variant="outlined"
                   value={state.criminoso}
                   onChange={changeCriminosoHandler}
+                  required
                 />
               </div>
               <Button
