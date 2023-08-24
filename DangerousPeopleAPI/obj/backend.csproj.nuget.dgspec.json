@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj": {}
+    "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj": {
+    "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
+        "projectUniqueName": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
-        "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erick\\source\\repos\\DangerousPeople\\DangerousPeopleAPI\\obj\\",
+        "projectPath": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }
