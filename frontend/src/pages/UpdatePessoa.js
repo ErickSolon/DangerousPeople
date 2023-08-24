@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import PessoasService from "../services/PessoasService";
+import "./tabela.css";
 
 function UpdatePessoa() {
   const { idParam } = useParams();
@@ -72,12 +73,12 @@ function UpdatePessoa() {
       };
 
       if (
-        this.state.casado === "" ||
-        this.state.cpf === "" ||
-        this.state.criminoso === "" ||
-        this.state.endereco === "" ||
-        this.state.identidade === "" ||
-        this.state.nomecompleto === ""
+        state.casado === "" ||
+        state.cpf === "" ||
+        state.criminoso === "" ||
+        state.endereco === "" ||
+        state.identidade === "" ||
+        state.nomecompleto === ""
       ) {
         alert("Digite todos os campos!");
       } else {

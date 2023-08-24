@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import logo from '../../public/logo192.png';
 
 class HeaderComponent extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class HeaderComponent extends Component {
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
             <Link class="navbar-brand" aria-current="page" to="/">
-              Navbar
+              <img src={logo} alt="logo" height="50px"/>
             </Link>
             <button
               class="navbar-toggler"

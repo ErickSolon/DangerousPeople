@@ -8,7 +8,7 @@ import {
   FormGroup,
 } from "@mui/material";
 import PessoasService from "../services/PessoasService";
-import './CriarPessoa.css';
+import './tabela.css';
 
 class CriarPessoa extends Component {
   constructor(props) {
