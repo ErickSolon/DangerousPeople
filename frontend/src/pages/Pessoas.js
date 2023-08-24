@@ -58,7 +58,7 @@ export function Pessoas(props) {
     {
       field: "actions",
       headerName: "Ações",
-      width: 200,
+      width: 220,
       renderCell: (params) => (
         <div>
           <Button
