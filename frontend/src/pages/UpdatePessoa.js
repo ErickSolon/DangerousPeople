@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button, TextField } from "@mui/material";
-import { Box } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  Input,
+  FormGroup,
+} from "@mui/material";
 import { useParams } from "react-router-dom";
 import PessoasService from "../services/PessoasService";
 
@@ -64,12 +70,23 @@ function UpdatePessoa() {
         identity: state.identidade,
         isCriminal: state.criminoso,
       };
-      
-      if(this.state.casado === "" || this.state.cpf === "" || this.state.criminoso === "" || this.state.endereco === "" || this.state.identidade === "" || this.state.nomecompleto === "") { 
+
+      if (
+        this.state.casado === "" ||
+        this.state.cpf === "" ||
+        this.state.criminoso === "" ||
+        this.state.endereco === "" ||
+        this.state.identidade === "" ||
+        this.state.nomecompleto === ""
+      ) {
         alert("Digite todos os campos!");
       } else {
         await PessoasService.updatePessoaById("/data/", state.id, pessoasData);
-        await PessoasService.updatePessoaById("/moreinfo/", state.id, pessoasMoreInfo);
+        await PessoasService.updatePessoaById(
+          "/moreinfo/",
+          state.id,
+          pessoasMoreInfo
+        );
 
         alert("Informações atualizadas com sucesso!");
       }
@@ -89,66 +106,84 @@ function UpdatePessoa() {
         noValidate
         autoComplete="off"
       >
-        <div class="row p-5">
-          <div class="col">
-            <div class="form-group">
-              <div class="form-control">
-                <TextField
-                  id="outlined-basic"
-                  label="Nome Completo"
-                  variant="outlined"
-                  value={state.nomecompleto}
-                  onChange={changeNomeCompletoHandler}
-                  required
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="casado(a)?"
-                  variant="outlined"
-                  value={state.casado}
-                  onChange={changeCasadoHandler}
-                  required
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="CPF"
-                  variant="outlined"
-                  value={state.cpf}
-                  onChange={changeCPFHandler}
-                  required
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="Endereço completo"
-                  variant="outlined"
-                  value={state.endereco}
-                  onChange={changeEnderecoHandler}
-                  required
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="Identidade"
-                  variant="outlined"
-                  value={state.identidade}
-                  onChange={changeIdentidadeHandler}
-                  required
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="Criminoso(a)?"
-                  variant="outlined"
-                  value={state.criminoso}
-                  onChange={changeCriminosoHandler}
-                  required
-                />
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="formulario">
+                <FormGroup>
+                  <FormControl>
+                    <InputLabel htmlFor="nome">Nome Completo</InputLabel>
+                    <Input
+                      id="nome"
+                      aria-describedby="my-helper-text"
+                      value={state.nomecompleto}
+                      onChange={changeNomeCompletoHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="casado">casado(a)?</InputLabel>
+                    <Input
+                      id="casado"
+                      aria-describedby="my-helper-text"
+                      value={state.casado}
+                      onChange={changeCasadoHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="cpf">CPF</InputLabel>
+                    <Input
+                      id="cpf"
+                      aria-describedby="my-helper-text"
+                      value={state.cpf}
+                      onChange={changeCPFHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="endereco">
+                      Endereço completo
+                    </InputLabel>
+                    <Input
+                      id="endereco"
+                      aria-describedby="my-helper-text"
+                      value={state.endereco}
+                      onChange={changeEnderecoHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="identidade">Identidade</InputLabel>
+                    <Input
+                      id="identidade"
+                      aria-describedby="my-helper-text"
+                      value={state.identidade}
+                      onChange={changeIdentidadeHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="criminoso">Criminoso(a)?</InputLabel>
+                    <Input
+                      id="criminoso"
+                      aria-describedby="my-helper-text"
+                      value={state.criminoso}
+                      onChange={changeCriminosoHandler}
+                      className="espacamento"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <Button
+                      variant="contained"
+                      color="success"
+                      onClick={updatePessoas}
+                    >
+                      Atualizar
+                    </Button>
+                  </FormControl>
+                </FormGroup>
               </div>
-              <Button
-                variant="contained"
-                color="success"
-                onClick={updatePessoas}
-              >
-                Salvar
-              </Button>
             </div>
           </div>
         </div>

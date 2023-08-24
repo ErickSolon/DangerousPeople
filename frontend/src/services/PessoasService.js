@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://localhost:7000";
+const baseURL = "http://localhost:5030";
 
 class PessoasService {
   getPessoas(path) {
