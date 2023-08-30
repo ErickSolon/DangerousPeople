@@ -48,7 +48,7 @@ namespace backend.Controllers
                 }
             ).ToListAsync();
 
-            if(infosAboutPeopleById == null) {
+            if (infosAboutPeopleById.FirstOrDefault() == null) {
                 return NotFound();
             }
 

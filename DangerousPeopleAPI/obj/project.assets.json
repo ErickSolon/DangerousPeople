@@ -1483,24 +1483,26 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "C:\\Users\\erick\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj",
+      "projectUniqueName": "C:\\Users\\erick\\Workspace\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/backend.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/home/erick/Workspace/C#/DangerousPeople/DangerousPeopleAPI/obj/",
+      "projectPath": "C:\\Users\\erick\\Workspace\\DangerousPeople\\DangerousPeopleAPI\\backend.csproj",
+      "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\erick\\Workspace\\DangerousPeople\\DangerousPeopleAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1567,7 +1569,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
