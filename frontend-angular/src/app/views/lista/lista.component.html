@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">IsMarried</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Full Address</th>
+                        <th scope="col">Identity</th>
+                        <th scope="col">IsCriminal</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let person of people">
+                        <th scope="row">{{ person.data.id }}</th>
+                        <td>{{ person.data.nomeCompleto }}</td>
+                        <td>{{ person.data.isMarried }}</td>
+                        <td>{{ person.moreInfo.cpf }}</td>
+                        <td>{{ person.moreInfo.fullAddress }}</td>
+                        <td>{{ person.moreInfo.identity }}</td>
+                        <td>{{ person.moreInfo.isCriminal }}</td>
+                        <td>
+                            <a class="btn btn-warning" routerLink="/update/{{person.data.id}}">
+                                Update
+                            </a>
+                            <button class="btn btn-danger" *ngIf="person.data.id !== undefined" (click)="deleteInfos(person.data.id.toString())">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
