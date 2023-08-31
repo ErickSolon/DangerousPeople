@@ -4,6 +4,7 @@
   Dotnet 7 WebAPI<br>
   React<br>
   MySQL<br>
+  Angular<br>
 
 - Página da lista de pessoas
  ![image](https://github.com/ErickSolon/DangerousPeople/assets/72041638/aae37b37-e5d9-42bc-97da-9bfd4d89d6da)
