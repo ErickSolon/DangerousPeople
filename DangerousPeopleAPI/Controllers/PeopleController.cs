@@ -22,37 +22,49 @@ namespace backend.Controllers
         [HttpGet("/people")]
         public async Task<IActionResult> FindAll()
         {
-            var infosAboutPeople = await (
-                from data in _context.Datas
-                join moreInfo in _context.MoreInfos on data.Id equals moreInfo.Id
-                select new
+            var InfosAboutPeople = await _context.Datas.Join(
+                _context.MoreInfos,
+                datas => datas.Id,
+                moreInfos => moreInfos.Id,
+                (datas, moreInfos) => new
                 {
-                    Data = data,
-                    MoreInfo = moreInfo
-                }
-            ).ToListAsync();
+                    datas,
+                    moreInfos
+                }).ToListAsync();
 
-            return Ok(infosAboutPeople);
+            if(InfosAboutPeople == null || InfosAboutPeople.Count < 0)
+            {
+                return NotFound("Nenhum usuário adicionado!");
+            }
+
+            return Ok(InfosAboutPeople);
         }
 
         [HttpGet("/people/{id}")]
         public async Task<IActionResult> FindById(long id) {
-            var infosAboutPeopleById = await (
-                from data in _context.Datas
-                join moreInfo in _context.MoreInfos on data.Id equals moreInfo.Id
-                where data.Id == id
-                select new
+            var InfosAboutPeopleById = await _context.MoreInfos.GroupJoin(
+                _context.Datas,
+                moreInfos => moreInfos.Id,
+                datas => datas.Id,
+                (moreInfos, datas) => new
                 {
-                    Data = data,
-                    MoreInfo = moreInfo
-                }
-            ).ToListAsync();
+                    moreInfos,
+                    datas
+                })
+                .SelectMany(x => x.datas.DefaultIfEmpty(),
+                (moreInfos, datas) => new
+                {
+                    moreInfos.moreInfos,
+                    datas
+                })
+                .Where(x => x.moreInfos.Id == id || x.datas.Id == id)
+                .ToListAsync();
 
-            if (infosAboutPeopleById.FirstOrDefault() == null) {
-                return NotFound();
+            if (InfosAboutPeopleById == null) {
+                return NotFound("Dado não encontrado!");
             }
 
-            return Ok(infosAboutPeopleById);
+            return Ok(InfosAboutPeopleById);
         }
     }
 }
