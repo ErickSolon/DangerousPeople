@@ -1,6 +1,7 @@
 # DangerousPeople
 - Principais tecnologias utilizadas
   - Dotnet 7 WebAPI<br>
+  - NUnit<br>
   - React<br>
   - MySQL<br>
   - Angular<br>
