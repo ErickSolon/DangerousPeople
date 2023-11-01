@@ -10,12 +10,12 @@ namespace backend.Test
     public class BackendTest
     {
         private PeopleController _PeopleController;
-        private Mock<DataDbContext> _IHttpContextAcessor;
+        private Mock<DataDbContext> _DataDbContext;
 
         [SetUp]
         public void Setup() {
-            _IHttpContextAcessor = new();
-            _PeopleController = new(_IHttpContextAcessor.Object);
+            _DataDbContext = new();
+            _PeopleController = new(_DataDbContext.Object);
     }
 
         [Test]
